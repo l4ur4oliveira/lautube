@@ -20,12 +20,11 @@ const StyledTimeline = styled.div`
   }
   section {
     width: 100%;
-    padding: 0;
+    padding: 16px 0;
     overflow: hidden;
-    padding: 16px;
     div {
-      
       width: calc(100vw - 16px * 4);
+      padding-bottom: 16px;
       display: grid;
       grid-gap: 16px;
       grid-template-columns: repeat(auto-fill,minmax(200px,1fr));
@@ -62,7 +61,7 @@ function Timeline(props) {
                 {
                   videos.map((video) => {
                     return (
-                      <a href={video.url}>
+                      <a href={video.url} target="_blank">
                         <img src={video.thumb} />
                         <span>{video.title}</span>
                       </a>

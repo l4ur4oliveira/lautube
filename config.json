@@ -2,7 +2,7 @@
   "name": "Laura de Oliveira",
   "job": "Team Leader Front-end",
   "github": "l4ur4oliveira",
-  "banner": "",
+  "banner": "https://images.unsplash.com/photo-1545231097-cbd796f1d95f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1995&q=80",
   "playlists": {
     "jogos": [
       {
@@ -11,16 +11,58 @@
         "thumb": "https://img.youtube.com/vi/QsqatJxAUtk/hqdefault.jpg"
       },
       {
-          "title": "Frostpunk - Neve e Steak tartare",
-          "url": "https://www.youtube.com/watch?v=O8jtAyPuhNg",
-          "thumb": "https://img.youtube.com/vi/O8jtAyPuhNg/hqdefault.jpg"
+          "title": "Cult of the Lamb - O Culto do Lambda",
+          "url": "https://www.youtube.com/watch?v=WCgao699L0Y",
+          "thumb": "https://img.youtube.com/vi/WCgao699L0Y/hqdefault.jpg"
+      },
+      {
+          "title": "Jogo GRÁTIS da Marvel!!",
+          "url": "https://www.youtube.com/watch?v=0Tr6uf0A16g",
+          "thumb": "https://img.youtube.com/vi/0Tr6uf0A16g/hqdefault.jpg"
+      },
+      {
+          "title": "Nominal - Paquetá, temos um problema!",
+          "url": "https://www.youtube.com/watch?v=tT2bA99STWU",
+          "thumb": "https://img.youtube.com/vi/tT2bA99STWU/hqdefault.jpg"
       }
     ],
     "dev": [
       {
-        "title": "Frostpunk - Neve e Steak tartare",
-        "url": "https://www.youtube.com/watch?v=O8jtAyPuhNg",
-        "thumb": "https://img.youtube.com/vi/O8jtAyPuhNg/hqdefault.jpg"
+        "title": "Como personalizar o seu perfil no Github (Readme)",
+        "url": "https://www.youtube.com/watch?v=TsaLQAetPLU",
+        "thumb": "https://img.youtube.com/vi/TsaLQAetPLU/hqdefault.jpg"
+      },
+      {
+        "title": "O que é Soft Skill e Hard Skill? Síndrome do Impostor, Carreira e Pressão",
+        "url": "https://www.youtube.com/watch?v=qrB94YucxFw",
+        "thumb": "https://img.youtube.com/vi/qrB94YucxFw/hqdefault.jpg"
+      },
+      {
+        "title": "Truques de JavaScript DOM que você precisa conhecer",
+        "url": "https://www.youtube.com/watch?v=fQJ2nezkUEA",
+        "thumb": "https://img.youtube.com/vi/fQJ2nezkUEA/hqdefault.jpg"
+      }
+    ],
+    "música": [
+      {
+        "title": "Evanescence - Use My Voice (Official Music Video)",
+        "url": "https://www.youtube.com/watch?v=1KAa5woluuM",
+        "thumb": "https://img.youtube.com/vi/1KAa5woluuM/hqdefault.jpg"
+      },
+      {
+        "title": "Pitty - You know I'm No Good",
+        "url": "https://www.youtube.com/watch?v=Ci3YAtZ72vE",
+        "thumb": "https://img.youtube.com/vi/Ci3YAtZ72vE/hqdefault.jpg"
+      },
+      {
+        "title": "Pentatonix - Bohemian Rhapsody (Official Video)",
+        "url": "https://www.youtube.com/watch?v=ojRj2JK5oCI",
+        "thumb": "https://img.youtube.com/vi/ojRj2JK5oCI/hqdefault.jpg"
+      },
+      {
+        "title": "lofi hip hop radio - beats to relax/study to",
+        "url": "https://www.youtube.com/watch?v=jfKfPfyJRdk",
+        "thumb": "https://img.youtube.com/vi/jfKfPfyJRdk/hqdefault.jpg"
       }
     ]
   }

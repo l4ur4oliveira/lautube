@@ -12,7 +12,7 @@ function HomePage() {
       <CSSReset />
       <div style={{
         display: "flex",
-        flexDirection: "comlumn",
+        flexDirection: "column",
         flex: 1
       }}>
         <Menu />
