@@ -1,7 +1,7 @@
 import { ThemeProvider } from "styled-components";
 import { CSSReset } from "../src/components/CSSReset";
 
-function MyApp({ Component, pageProps }) {
+export default function MyApp({ Component, pageProps }) {
   const theme = {
     light: {
         backgroundBase: "#f9f9f9",
@@ -26,5 +26,3 @@ function MyApp({ Component, pageProps }) {
     </ThemeProvider>
   )
 }
-
-export default MyApp;

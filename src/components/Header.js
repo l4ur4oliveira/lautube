@@ -25,7 +25,7 @@ const StyledBanner = styled.div`
   background-size: cover;
 `;
 
-function Header() {
+export default function Header() {
   return (
     <StyledHeader>
       <StyledBanner />
@@ -39,5 +39,3 @@ function Header() {
     </StyledHeader>
   );
 }
-
-export default Header;

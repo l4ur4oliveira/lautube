@@ -45,7 +45,7 @@ const StyledTimeline = styled.div`
   }
 `;
 
-function Timeline({searchValue, ...props}) {
+export default function Timeline({searchValue, ...props}) {
   const playlistNames = Object.keys(props.playlists);
 
   return (
@@ -83,5 +83,3 @@ function Timeline({searchValue, ...props}) {
     </StyledTimeline>
   );
 }
-
-export default Timeline;

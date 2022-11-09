@@ -6,7 +6,7 @@ import Header from '../src/components/Header';
 import Menu from "../src/components/Menu";
 import Timeline from '../src/components/Timeline';
 
-function HomePage() {
+export default function HomePage() {
   const [ searchValue, setSearchValue ] = useState("");
 
   return (
@@ -25,5 +25,3 @@ function HomePage() {
     </>
   );
 }
-
-export default HomePage;
