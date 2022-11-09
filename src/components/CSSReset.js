@@ -8,6 +8,8 @@ export const CSSReset = createGlobalStyle`
     box-sizing: border-box;
   }
   body {
+    background-color: ${({ theme }) => theme.backgroundBase || "#FFFFFF"};
+    color: ${({ theme }) => theme.textColorBase || "#222222"};
     font-family: sans-serif;
   }
   /* NextJS */
@@ -41,12 +43,12 @@ export const CSSReset = createGlobalStyle`
     height: 10px;
   }
   ::-webkit-scrollbar-track {
-    background: #f3f3f3;
+    background: ${({ theme }) => theme.backgroundLevel2 || "#FFFFFF"};
   }
   ::-webkit-scrollbar-thumb {
-    background: #888;
+    background: rgba(5,5,5,0.3);
   }
   ::-webkit-scrollbar-thumb:hover {
-    background: #555;
+    background: rgba(5,5,5,0.4);
   }
 `;

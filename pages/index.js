@@ -1,7 +1,5 @@
 import { useState } from "react";
 
-import { CSSReset } from "../src/components/CSSReset";
-
 import config from '../config.json';
 
 import Header from '../src/components/Header';
@@ -13,7 +11,6 @@ function HomePage() {
 
   return (
     <>
-      <CSSReset />
       <div style={{
         display: "flex",
         flexDirection: "column",
