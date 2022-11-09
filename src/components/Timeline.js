@@ -55,7 +55,7 @@ function Timeline({searchValue, ...props}) {
           const videos = props.playlists[playlistName];
 
           return (
-            <section>
+            <section key={playlistName}>
               <h2>{playlistName}</h2>
               <div>
                 {
@@ -68,7 +68,7 @@ function Timeline({searchValue, ...props}) {
                     })
                     .map((video) => {
                       return (
-                        <a href={video.url} target="_blank">
+                        <a key={video.url} href={video.url} target="_blank">
                           <img src={video.thumb} />
                           <span>{video.title}</span>
                         </a>
