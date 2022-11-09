@@ -32,12 +32,10 @@ function MyApp({ Component, pageProps }) {
   const context = useContext(ColorModeContext);
 
   return (
-    <ProviderWrapper>
-      <ThemeProvider theme={theme[context.mode]}>
-        <CSSReset />
-        <Component {...pageProps} />
-      </ThemeProvider>
-    </ProviderWrapper>
+    <ThemeProvider theme={theme[context.mode]}>
+      <CSSReset />
+      <Component {...pageProps} />
+    </ThemeProvider>
   )
 }
 
