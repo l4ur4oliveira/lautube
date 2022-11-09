@@ -1,3 +1,5 @@
+import { useState } from "react";
+
 import { CSSReset } from "../src/components/CSSReset";
 
 import config from '../config.json';
@@ -7,6 +9,8 @@ import Menu from "../src/components/Menu";
 import Timeline from '../src/components/Timeline';
 
 function HomePage() {
+  const [ searchValue, setSearchValue ] = useState("");
+
   return (
     <>
       <CSSReset />
@@ -15,10 +19,10 @@ function HomePage() {
         flexDirection: "column",
         flex: 1
       }}>
-        <Menu />
+        <Menu searchValue={searchValue} setSearchValue={setSearchValue} />
         <main>
           <Header />
-          <Timeline playlists={config.playlists} />
+          <Timeline searchValue={searchValue} playlists={config.playlists} />
         </main>
       </div>
     </>

@@ -45,7 +45,7 @@ const StyledTimeline = styled.div`
   }
 `;
 
-function Timeline(props) {
+function Timeline({searchValue, ...props}) {
   const playlistNames = Object.keys(props.playlists);
 
   return (
@@ -59,14 +59,21 @@ function Timeline(props) {
               <h2>{playlistName}</h2>
               <div>
                 {
-                  videos.map((video) => {
-                    return (
-                      <a href={video.url} target="_blank">
-                        <img src={video.thumb} />
-                        <span>{video.title}</span>
-                      </a>
-                    );
-                  })
+                  videos
+                    .filter((video) => {
+                      const videoTitleNormalized = video.title.toLowerCase();
+                      const searchValueNormalized = searchValue.toLowerCase();
+                      
+                      return videoTitleNormalized.includes(searchValueNormalized)
+                    })
+                    .map((video) => {
+                      return (
+                        <a href={video.url} target="_blank">
+                          <img src={video.thumb} />
+                          <span>{video.title}</span>
+                        </a>
+                      );
+                    })
                 }
               </div>
             </section>
