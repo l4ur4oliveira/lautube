@@ -1,13 +1,13 @@
 import { createContext } from 'react';
 
 export const ColorModeContext = createContext({
-  mode: "dark"
+  mode: ""
 });
 
 export default function ColorModeProvider(props) {
   return (
     // Value não está sendo setado
-    <ColorModeContext.Provider value={{ mode: "light" }}>
+    <ColorModeContext.Provider value={{ mode: props.initialMode }}>
       {props.children}
     </ColorModeContext.Provider>
   )

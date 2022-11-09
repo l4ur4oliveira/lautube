@@ -20,16 +20,31 @@ const theme = {
   }
 };
 
-export default function MyApp({ Component, pageProps }) {
-  const contexto = useContext(ColorModeContext);
-  console.log(contexto);
+function ProviderWrapper(props) {
+  return (
+    <ColorModeProvider initialMode={"dark"}>
+      {props.children}
+    </ColorModeProvider>
+  )
+}
+
+function MyApp({ Component, pageProps }) {
+  const context = useContext(ColorModeContext);
 
   return (
-    <ColorModeProvider>
-      <ThemeProvider theme={theme[contexto.mode]}>
+    <ProviderWrapper>
+      <ThemeProvider theme={theme[context.mode]}>
         <CSSReset />
         <Component {...pageProps} />
       </ThemeProvider>
-    </ColorModeProvider>
+    </ProviderWrapper>
+  )
+}
+
+export default function _App(props) {
+  return (
+    <ProviderWrapper>
+      <MyApp {...props} />
+    </ProviderWrapper>
   )
 }
