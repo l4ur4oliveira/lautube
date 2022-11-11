@@ -1,13 +1,29 @@
 import { useState } from "react";
 import { StyledRegisterVideo } from "./styles";
 
-export default function RegisterVideo() {
-  const [isFormVisible, setIsFormVisible] = useState(true);
-  const [values, setValues] = useState({ title: "", url: ""});
+function useForm(formProps) {
+  const [values, setValues] = useState(formProps.initialValues);
 
-  function temporarySubmit() {
-    alert(`${values.title} - ${values.url}`);
+  
+  return {
+    values,
+    handleChange: (e) => {
+      const name = e.target.name;
+
+      setValues({
+        ...values,
+        [name]: e.target.value
+      });
+    },
+    clearForm: () => setValues({})
   }
+}
+
+export default function RegisterVideo() {
+  const [isFormVisible, setIsFormVisible] = useState(false);
+  const formSubmit = useForm({
+    initialValues: { title: "", url: "" }
+  });
 
   return (
     <StyledRegisterVideo>
@@ -19,7 +35,11 @@ export default function RegisterVideo() {
         {
           isFormVisible
           ? (
-            <form onSubmit={(e) => e.preventDefault()}>
+            <form onSubmit={(e) => {
+              e.preventDefault();
+              formSubmit.clearForm();
+              setIsFormVisible(false);
+            }}>
               <div>
                 <button
                   type="button"
@@ -28,27 +48,17 @@ export default function RegisterVideo() {
                 >X</button>
                 <input
                   placeholder="Título do vídeo"
-                  name="video-title"
-                  value={values.title}
-                  onChange={(e) => {
-                    setValues({
-                      ...values,
-                      title: e.target.value
-                    });
-                  }}
+                  name="title"
+                  value={formSubmit.values.title}
+                  onChange={formSubmit.handleChange}
                 />
                 <input
                   placeholder="URL"
-                  name="video-url"
-                  value={values.url}
-                  onChange={(e) => {
-                    setValues({
-                      ...values,
-                      url: e.target.value
-                    });
-                  }}
+                  name="url"
+                  value={formSubmit.values.url}
+                  onChange={formSubmit.handleChange}
                 />
-                <button type="submit" onClick={temporarySubmit}>Cadastrar</button>
+                <button type="submit">Cadastrar</button>
               </div>
             </form>
           )
