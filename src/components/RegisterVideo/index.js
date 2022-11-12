@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { StyledRegisterVideo } from "./styles";
-import { createClient } from "@supabase/supabase-js";
+import { videoService } from "../../services/videoService";
 
 function useForm(formProps) {
   const [values, setValues] = useState(formProps.initialValues);
@@ -19,20 +19,8 @@ function useForm(formProps) {
   }
 }
 
-const supabaseUrl  = "https://wrboteehgyqavoyfqjpq.supabase.co";
-const supabaseKey = process.env.SUPABASE_KEY;
-const supabase = createClient(supabaseUrl , supabaseKey);
-
-function getVideoId(url) {
-  const videoId = url.split("v=")[1];
-  const ampersandPosition = videoId.indexOf("&");
-  if (ampersandPosition !== -1) {
-    return videoId.substring(0, ampersandPosition);
-  }
-  return videoId;
-}
-
 export default function RegisterVideo() {
+  const service = videoService();
   const [isFormVisible, setIsFormVisible] = useState(false);
   const formSubmit = useForm({
     initialValues: { title: "", url: "", playlist: "" }
@@ -51,14 +39,7 @@ export default function RegisterVideo() {
             <form onSubmit={(e) => {
               e.preventDefault();
 
-              const videoId = getVideoId(formSubmit.values.url);
-
-              supabase.from("video").insert({
-                title: formSubmit.values.title,
-                url: formSubmit.values.url,
-                thumb: `https://img.youtube.com/vi/${videoId}/hqdefault.jpg`,
-                playlist: formSubmit.values.playlist
-              })
+              service.setVideo(formSubmit.values)
               .then((response) => {
                 console.log(response);
               })

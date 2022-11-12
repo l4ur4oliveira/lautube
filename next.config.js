@@ -5,6 +5,9 @@ const nextConfig = {
   compiler: {
     styledComponents: true,
   },
+  env: {
+    supabaseKey: process.env.SUPABASE_KEY,
+  },
 }
 
 module.exports = nextConfig

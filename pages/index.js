@@ -4,33 +4,27 @@ import Header from "../src/components/Header";
 import Menu from "../src/components/Menu";
 import Timeline from "../src/components/Timeline";
 
-import { createClient } from "@supabase/supabase-js";
-
-const supabaseUrl  = "https://wrboteehgyqavoyfqjpq.supabase.co";
-const supabaseKey = process.env.SUPABASE_KEY;
-const supabase = createClient(supabaseUrl , supabaseKey);
+import { videoService } from "../src/services/videoService";
 
 export default function HomePage() {
+  const service = videoService();
+
   const [ searchValue, setSearchValue ] = useState("");
-  const [playlists, setPlaylists] = useState({});
+  const [ playlists, setPlaylists ] = useState({});
 
   useEffect(() => {
-    console.log("USE EFFECT");
+    service.getAllVideos()
+    .then((response) => {
+      const newPlaylists = {...playlists};
 
-    supabase.from("video")
-      .select("*")
-      .then((response) => {
-        const newPlaylists = {...playlists};
-        
-
-        response.data.forEach((item) => {
-          if(!newPlaylists[item.playlist]) {
-            newPlaylists[item.playlist] = [];
-          }
-          newPlaylists[item.playlist].push(item);
-        })
-        setPlaylists(newPlaylists);
-      });
+      response.data.forEach((item) => {
+        if(!newPlaylists[item.playlist]) {
+          newPlaylists[item.playlist] = [];
+        }
+        newPlaylists[item.playlist].push(item);
+      })
+      setPlaylists(newPlaylists);
+    });
   },[]);
 
   return (
