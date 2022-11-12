@@ -1,10 +1,10 @@
 import { useState } from "react";
 
-import config from '../config.json';
+import config from "../config.json";
 
-import Header from '../src/components/Header';
+import Header from "../src/components/Header";
 import Menu from "../src/components/Menu";
-import Timeline from '../src/components/Timeline';
+import Timeline from "../src/components/Timeline";
 
 export default function HomePage() {
   const [ searchValue, setSearchValue ] = useState("");
