@@ -9,9 +9,12 @@
 - React
 - Next.js
 - Styled-components
+- Supabase
 
 ## ⚙️ Run
 
+Configurar a variável de ambiente `SUPABASE_KEY` no arquivo `.env` e rodar o projeto:
+ 
 ```
 npm run dev
 ```
